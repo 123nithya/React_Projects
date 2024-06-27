@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap");
+
+:root {
+  --color1: #f5ecdf;
+  --color2: #ead8c0;
+  --color3: #d1bb9e;
+  --color4: #7e6b52;
+  --color5: #505e44;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color1);
+  font-family: "Tangerine", cursive;
+}
+
+/* Navbar section starts */
+.navbar-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+.logo-container {
+  margin-left: 2%;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.logo-container span {
+  font-size: 1.5rem;
+  animation: beat 0.5s infinite alternate;
+  transform-origin: center;
+}
+@keyframes beat {
+  to {
+    transform: scale(1.4);
+  }
+}
+.logo-container h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  cursor: pointer;
+  color: var(--color5);
+}
+.navbar-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 2;
+  margin-left: 10%;
+  gap: 5%;
+  padding: 10px;
+}
+.navbar-links .links ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.links ul li {
+  list-style: none;
+  font-size: 2rem;
+  font-weight: 800;
+  cursor: pointer;
+  color: var(--color5);
+}
+.btn button {
+  padding: 0.9rem 1.7rem;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  background-color: var(--color5);
+  color: var(--color1);
+  font-size: 1rem;
+  cursor: pointer;
+}
+.data {
+  cursor: pointer;
+  position: relative;
+  padding: 10px 20px;
+  transition: all 1s;
+  &:after,
+  &:before {
+    content: " ";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border: 0px solid #fff;
+    transition: all 1s;
+  }
+  &:after {
+    top: -1px;
+    left: -1px;
+    border-top: 5px solid var(--color4);
+    border-left: 5px solid var(--color4);
+  }
+  &:before {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 5px solid var(--color4);
+    border-right: 5px solid var(--color4);
+  }
+  &:hover {
+    &:before,
+    &:after {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+/* Navbar section ends */
+
+/* Hero Section starts */
+.herosection-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 90px;
+}
+.herosection-container .firstSection {
+  margin-top: 5%;
+}
+.firstSection h1 {
+  font-size: 5rem;
+  color: var(--color5);
+}
+.firstSection .typeeffect {
+  font-size: 2.5rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.firstSection .content {
+  margin-top: 3%;
+  text-align: justify;
+  font-size: 1.7rem;
+  font-weight: 800;
+  width: 65%;
+}
+.firstSection .icons {
+  margin-top: 5%;
+  color: var(--color4);
+  margin-left: 15%;
+}
+.firstSection .icons .icon {
+  font-size: 2.5rem;
+  cursor: pointer;
+  margin-left: 5%;
+}
+.btn button.two {
+  width: 50%;
+  margin-left: 10%;
+  margin-top: 3%;
+}
+.btn button:hover {
+  scale: 0.9;
+}
+.icons .icon :hover {
+  scale: 1.1;
+}
+.herosection-container .secondSection {
+  flex: 1;
+  margin-top: 5%;
+  position: relative;
+}
+.secondSection .image {
+  margin-left: -10%;
+  margin-top: 3%;
+  position: relative;
+}
+.secondSection .image img {
+  /* width: 100%; */
+  height: auto;
+  display: block;
+  position: relative;
+}
+.secondSection .vapor::before,
+.secondSection .vapor::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width: 200px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(139, 69, 19, 0.423) 0%, rgba(139,69,19,0) 80%);
+  opacity: 0.5;
+  border-radius: 50%;
+  animation: steamRise 5s infinite ease-in-out;
+}
+.secondSection .vapor::after {
+  left: 50%;
+  animation-delay: 2.5s;
+}
+@keyframes steamRise {
+  0% {
+    transform: translateX(-50%) translateY(0) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateX(-50%) translateY(-50px) scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-100px) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Hero Section ends */
