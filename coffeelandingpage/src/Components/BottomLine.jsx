@@ -1,10 +1,17 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const BottomLine = () => {
   return (
-    <div className="bottomline-container">
+    <motion.div
+      className="bottomline-container"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false }}
+      transition={{ duration: 1 }}
+    >
       <div className="btmSectionOne">
-        <p>Enjoy your coffee in out comfortable place</p>
+        <p>Enjoy your coffee in our comfortable place</p>
       </div>
       <hr className="hr" />
       <div className="btmSectionTwo">
@@ -21,7 +28,7 @@ const BottomLine = () => {
           <span>Creative Studio</span>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
