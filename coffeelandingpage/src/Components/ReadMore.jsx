@@ -5,33 +5,28 @@ import { motion } from "framer-motion";
 
 const ReadMore = () => {
   return (
-    <motion.div
-      className="readmore-container"
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, delay: 1 }}
-    >
+    <div className="readmore-container">
       <motion.div
         className="picSection"
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
         transition={{ duration: 1 }}
       >
-        <img src={img} alt="" />
+        <img src={img} alt="Coffee" />
       </motion.div>
       <motion.div
         className="contentSection"
         initial={{ opacity: 0, x: 100 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
         transition={{ duration: 1 }}
       >
         <span>
           <Typewriter
             options={{
               strings: [
-                "Coffeee...",
+                "Coffee...",
                 "caffeine...",
                 "espresso...",
                 "brew...",
@@ -52,7 +47,7 @@ const ReadMore = () => {
           </a>
         </p>
       </motion.div>
-    </motion.div>
+    </div>
   );
 };
 
